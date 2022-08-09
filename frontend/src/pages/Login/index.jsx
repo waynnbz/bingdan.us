@@ -3,8 +3,8 @@ import { RiLoginCircleLine } from 'react-icons/ri'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
-import Spinner from '../components/Spinner'
-import { login, reset } from '../features/auth/authSlice'
+import Spinner from '../../components/Spinner'
+import { login, reset } from '../../features/auth/authSlice'
 
 function Login() {
   const [formData, setFormData] = useState({
