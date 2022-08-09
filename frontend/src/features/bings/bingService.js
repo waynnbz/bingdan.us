@@ -28,9 +28,23 @@ const getBings = async (token) => {
   return response.data
 }
 
+// Delete user bing
+const deleteBing = async (bingId, token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  }
+
+  const response = await axios.delete(API_URL + bingId, config)
+
+  return response.data
+}
+
 const bingService = {
   createBing,
   getBings,
+  deleteBing,
 }
 
 export default bingService

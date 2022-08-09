@@ -47,6 +47,25 @@ export const getBings = createAsyncThunk(
   }
 )
 
+// Delete user bing
+export const deleteBing = createAsyncThunk(
+  'bings/delete',
+  async (id, thunkAPI) => {
+    try {
+      const token = thunkAPI.getState().auth.user.token
+      return await bingService.deleteBing(id, token)
+    } catch (error) {
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString()
+      return thunkAPI.rejectWithValue(message)
+    }
+  }
+)
+
 export const bingSlice = createSlice({
   name: 'bing',
   initialState,
@@ -77,6 +96,21 @@ export const bingSlice = createSlice({
         state.bings = action.payload
       })
       .addCase(getBings.rejected, (state, action) => {
+        state.isLoading = false
+        state.isError = true
+        state.message = action.payload
+      })
+      .addCase(deleteBing.pending, (state) => {
+        state.isLoading = true
+      })
+      .addCase(deleteBing.fulfilled, (state, action) => {
+        state.isLoading = false
+        state.isSuccess = true
+        state.bings = state.bings.filter(
+          (bing) => bing._id !== action.payload._id
+        )
+      })
+      .addCase(deleteBing.rejected, (state, action) => {
         state.isLoading = false
         state.isError = true
         state.message = action.payload

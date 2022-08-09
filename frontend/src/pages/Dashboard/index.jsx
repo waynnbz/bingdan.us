@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import BingForm from '../../components/BingForm'
+import BingItem from '../../components/BingItem'
 import Spinner from '../../components/Spinner'
 import { getBings, reset } from '../../features/bings/bingSlice'
 
@@ -44,6 +45,19 @@ function Dashboard() {
       </section>
 
       <BingForm />
+
+      <section className='content'>
+        {bings.length > 0 ? (
+          // FIXME: replace the css
+          <div className='goals'>
+            {bings.map((bing) => (
+              <BingItem key={bing._id} bing={bing} />
+            ))}
+          </div>
+        ) : (
+          <h3>You have not draw any bings</h3>
+        )}
+      </section>
     </>
   )
 }
