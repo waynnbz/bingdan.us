@@ -16,23 +16,21 @@ function Dashboard() {
     (state) => state.bings
   )
 
-  // useEffect(() => {
-  //   if (isError) {
-  //     console.log(message)
-  //   }
+  useEffect(() => {
+    if (isError) {
+      console.log(message)
+    }
 
-  //   if (!user) {
-  //     navigate('/login')
-  //   }
+    if (!user) {
+      navigate('/login')
+    }
 
-  //   console.log('CALLLLLLLLLLLLLLLED')
-  //   dispatch(getBings())
+    dispatch(getBings())
 
-  //   // return () => {
-  //   //   dispatch(reset())
-  //   // }
-  //   // dispatch(reset())
-  // }, [user, isError, message, navigate, dispatch])
+    return () => {
+      dispatch(reset())
+    }
+  }, [user, isError, message, navigate, dispatch])
 
   if (isLoading) {
     return <Spinner />

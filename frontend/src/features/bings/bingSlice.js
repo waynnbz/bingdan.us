@@ -9,6 +9,7 @@ const initialState = {
   message: '',
 }
 
+// Create new bing
 export const createBing = createAsyncThunk(
   'bings/create',
   async (bingData, thunkAPI) => {
@@ -49,7 +50,7 @@ export const getBings = createAsyncThunk(
 export const bingSlice = createSlice({
   name: 'bing',
   initialState,
-  reducer: {
+  reducers: {
     reset: (state) => initialState,
   },
   extraReducers: (builder) => {
