@@ -5,6 +5,8 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import BingFlow from './components/BingFlow'
+import Welcome from './pages/Welcome'
 
 function App() {
   return (
@@ -13,8 +15,10 @@ function App() {
         <ToastContainer />
         <div className='container'>
           <Header />
+          {/* <BingFlow /> */}
           <Routes>
-            <Route path='/' element={<Dashboard />} />
+            <Route path='/' element={<Welcome />} />
+            <Route path='/list' element={<Dashboard />} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
           </Routes>

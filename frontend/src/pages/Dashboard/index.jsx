@@ -7,6 +7,7 @@ import BingForm from '../../components/BingForm'
 import BingItem from '../../components/BingItem'
 import Spinner from '../../components/Spinner'
 import { getBings, reset } from '../../features/bings/bingSlice'
+import './styles.css'
 
 function Dashboard() {
   const navigate = useNavigate()
@@ -34,32 +35,29 @@ function Dashboard() {
     }
   }, [user, isError, message, navigate, dispatch])
 
-  if (isLoading) {
-    return <Spinner />
-  }
-
   return (
-    <>
-      <section className='heading'>
+    <div className='card shadow gradient'>
+      {/* <section className='heading'>
         <h1>Welcome {user && user.name}</h1>
         <p>Bings Dashboard</p>
-      </section>
+      </section> */}
 
-      <BingForm />
-
-      <section className='content'>
+      <div className='todo'>
         {bings.length > 0 ? (
-          // FIXME: replace the css
-          <div className='goals'>
-            {bings.map((bing) => (
+          <div>
+            {bings.map((bing, i) => (
               <BingItem key={bing._id} bing={bing} />
             ))}
           </div>
+        ) : isLoading ? (
+          <Spinner />
         ) : (
-          <h3>You have not draw any bings</h3>
+          <h3>空空的。。</h3>
         )}
-      </section>
-    </>
+      </div>
+
+      <BingForm />
+    </div>
   )
 }
 

@@ -47,7 +47,7 @@ h3 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0;
+  padding: 16px 16px;
   border-bottom: 1px solid #e6e6e6;
   margin-bottom: 60px;
 }
@@ -86,30 +86,29 @@ h3 {
   color: #828282;
 }
 
-.goals {
+/* .goals {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
-}
+} */
 
-.goal {
+/* .goal {
   background-color: #f4f4f4;
   margin: 10px 0;
   padding: 20px 0 10px;
   position: relative;
-}
+} */
 
-.goal .close {
+/* .goal .close {
   position: absolute;
   top: 10px;
   right: 15px;
   cursor: pointer;
   border: none;
   background: none;
-}
+} */
 
-.form,
-.content {
+.form {
   width: 70%;
   margin: 0 auto;
 }
@@ -136,9 +135,9 @@ h3 {
 }
 
 .btn {
-  padding: 10px 20px;
+  padding: 5px 14px;
   border: 1px solid #000;
-  border-radius: 5px;
+  border-radius:14px;
   background: #000;
   color: #fff;
   font-size: 16px;
@@ -155,7 +154,7 @@ h3 {
   margin-right: 8px;
 }
 
-.btn-reverse {
+.btn {
   background: #fff;
   color: #000;
 }
@@ -173,9 +172,9 @@ h3 {
   position: fixed;
   top: 0;
   right: 0;
-  bottom: 0;
+  bottom: 50%;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  /* background-color: rgba(0, 0, 0, 0.5); */
   z-index: 5000;
   display: flex;
   justify-content: center;
