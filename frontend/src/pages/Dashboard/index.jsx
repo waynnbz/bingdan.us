@@ -24,12 +24,13 @@ function Dashboard() {
 
     if (!user) {
       navigate('/login')
-    }
+    } else {
+      //TODO: is there a better structure than an else
+      dispatch(getBings())
 
-    dispatch(getBings())
-
-    return () => {
-      dispatch(reset())
+      return () => {
+        dispatch(reset())
+      }
     }
   }, [user, isError, message, navigate, dispatch])
 

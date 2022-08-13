@@ -107,7 +107,7 @@ export const bingSlice = createSlice({
         state.isLoading = false
         state.isSuccess = true
         state.bings = state.bings.filter(
-          (bing) => bing._id !== action.payload._id
+          (bing) => bing._id !== action.payload.id
         )
       })
       .addCase(deleteBing.rejected, (state, action) => {
