@@ -1,4 +1,4 @@
 .env
 /node_modules
-/cloudy/node_modules
+/cloudy
 /frontend/node_modules
