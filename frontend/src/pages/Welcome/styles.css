@@ -91,7 +91,8 @@
   }
   
   .add {
-    width: calc(var(--width) / 3.32);
+    /* width: calc(var(--width) / 3.32); */
+    width: 78px;
     height: 60px;
     background: linear-gradient(135deg, #9795EF, #F9C5D1);
     color: #FFF;
@@ -122,15 +123,21 @@
     to {left: 100vw; visibility: hidden}
   }
   
-  @media (max-width: 520px) {
+  @media (max-width: 480px) {
     :root {
-        --width: 340px; 
+        --width: 100%; 
     }
   }
 
+  /* @media (max-height: 740px) {
+    :root {
+        --height: 580px;
+    }
+  } */
+
   @media (min-width: 1240px) {
     :root {
-        --width: 478px; 
+        --width: 50%; 
     }
   }
   

@@ -7,7 +7,7 @@ const Bing = require('../models/bingModel')
 const getBings = asyncHandler(async (req, res) => {
   const bings = await Bing.find({ user: req.user._id })
 
-  res.status(200).json(bings)
+  res.status(200).json(bings.reverse())
 })
 
 // @desc    Set bing

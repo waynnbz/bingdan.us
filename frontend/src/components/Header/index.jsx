@@ -5,7 +5,8 @@ import {
 } from 'react-icons/ri'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
-import { logout, reset } from '../features/auth/authSlice'
+import { logout, reset } from '../../features/auth/authSlice'
+import './styles.css'
 
 function Header() {
   const navigate = useNavigate()

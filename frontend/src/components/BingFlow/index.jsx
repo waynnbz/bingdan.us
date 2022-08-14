@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import heartCake from '../../assets/heart-cake.svg'
+import heartCookie from '../../assets/valentines-cookie-svgrepo-com.svg'
 
 function BingFlow() {
   // const flyBings = useRef([])
@@ -30,7 +30,7 @@ function BingFlow() {
 
   return (
     <>
-      <img src={heartCake} alt='bingggg'></img>
+      <img src={heartCookie} alt='bingggg'></img>
     </>
   )
 }

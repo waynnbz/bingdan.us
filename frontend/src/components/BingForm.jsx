@@ -1,11 +1,13 @@
 import { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { toast } from 'react-toastify'
 import { createBing } from '../features/bings/bingSlice'
 
 function BingForm() {
   const [text, setText] = useState('')
   const [showAdder, setShowAdder] = useState(false)
+
+  const { user } = useSelector((state) => state.auth)
 
   const dispatch = useDispatch()
 
@@ -43,19 +45,21 @@ function BingForm() {
     <div className='addControls'>
       <form
         className={showAdder ? 'appear bing-form' : 'bing-form'}
-        onKeyDown={(e) =>
-          e.key === 'Enter' && onSubmit(e) 
-        }
+        onKeyDown={(e) => e.key === 'Enter' && onSubmit(e)}
       >
         <input
           className='input shadow'
           type='text'
           id='text'
           value={text}
-          placeholder='莹莹画张饼儿吧...'
+          placeholder={(user?.name || '') + ` 画张饼儿吧...`}
           onChange={(e) => setText(e.target.value)}
         />
-        <button style={{margin: '0 4px'}} onClick={(e) => onSubmit(e)} type='button'>
+        <button
+          style={{ margin: '0 4px' }}
+          onClick={(e) => onSubmit(e)}
+          type='button'
+        >
           add
         </button>
       </form>

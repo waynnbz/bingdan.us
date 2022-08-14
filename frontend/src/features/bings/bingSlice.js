@@ -80,7 +80,7 @@ export const bingSlice = createSlice({
       .addCase(createBing.fulfilled, (state, action) => {
         state.isLoading = false
         state.isSuccess = true
-        state.bings.push(action.payload)
+        state.bings.unshift(action.payload)
       })
       .addCase(createBing.rejected, (state, action) => {
         state.isLoading = false

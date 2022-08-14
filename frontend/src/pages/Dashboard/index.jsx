@@ -1,10 +1,11 @@
 // import Sky from '../_Sky'
 // import '../_App.css'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import BingForm from '../../components/BingForm'
-import BingItem from '../../components/BingItem'
+import BingList from '../../components/BingList'
+import Pagination from '../../components/Pagination'
 import Spinner from '../../components/Spinner'
 import { getBings, reset } from '../../features/bings/bingSlice'
 import './styles.css'
@@ -17,6 +18,8 @@ function Dashboard() {
   const { bings, isLoading, isError, message } = useSelector(
     (state) => state.bings
   )
+  const [currentPage, setCurrentPage] = useState(1)
+  const [bingsPerPage, setBingsPerPage] = useState(8)
 
   useEffect(() => {
     if (isError) {
@@ -27,6 +30,8 @@ function Dashboard() {
       navigate('/login')
     } else {
       //TODO: is there a better structure than an else
+      // plus=> I found that the dashboard components are rendered before user validity is checked and navigated
+      // althought it just renders empty null data, maybe I shoud avoid this
       dispatch(getBings())
 
       return () => {
@@ -35,6 +40,14 @@ function Dashboard() {
     }
   }, [user, isError, message, navigate, dispatch])
 
+  // Get current Bings
+  const indexOfLastBing = currentPage * bingsPerPage
+  const indexOfFirstBing = indexOfLastBing - bingsPerPage
+  const currentBings = bings.slice(indexOfFirstBing, indexOfLastBing)
+
+  // Change page
+  const paginate = (pageNumber) => setCurrentPage(pageNumber)
+
   return (
     <div className='card shadow gradient'>
       {/* <section className='heading'>
@@ -42,19 +55,27 @@ function Dashboard() {
         <p>Bings Dashboard</p>
       </section> */}
 
-      <div className='todo'>
-        {bings.length > 0 ? (
-          <div>
-            {bings.map((bing, i) => (
-              <BingItem key={bing._id} bing={bing} />
-            ))}
-          </div>
-        ) : isLoading ? (
-          <Spinner />
+      {/* TODO: clean up the logic */}
+      {bings.length > 0 ? (
+        currentBings.length > 0 ? (
+          <BingList bings={currentBings} isLoading={isLoading} />
         ) : (
-          <h3>空空的。。</h3>
-        )}
-      </div>
+          paginate(Math.max(currentPage - 1, 1))
+        )
+      ) : isLoading ? (
+        <Spinner />
+      ) : (
+        <h3>空空的。。</h3>
+      )}
+
+      {bings.length > bingsPerPage && (
+        <Pagination
+          bingsPerPage={bingsPerPage}
+          totalBings={bings.length}
+          paginate={paginate}
+          currentPage={currentPage}
+        />
+      )}
 
       <BingForm />
     </div>
