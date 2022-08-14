@@ -98,8 +98,7 @@ button::-moz-focus-inner {
     /* width: 100%; */
 }
 
-.form,
-.content {
+.form .content {
   width: 70%;
   margin: 20px, 0;
 }
@@ -205,6 +204,11 @@ button::-moz-focus-inner {
     animation-name: appear;
     animation-duration: .5s;
     animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55); 
+}
+
+.empty-list {
+    position: relative;
+    top: 30%;
 }
 
 @keyframes disappear {

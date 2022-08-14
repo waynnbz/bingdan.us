@@ -65,7 +65,7 @@ function Dashboard() {
       ) : isLoading ? (
         <Spinner />
       ) : (
-        <h3>空空的。。</h3>
+        <h3 className='empty-list'>空空的。。😭</h3>
       )}
 
       {bings.length > bingsPerPage && (

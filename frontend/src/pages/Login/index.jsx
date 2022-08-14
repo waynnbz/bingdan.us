@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { RiLoginCircleLine } from 'react-icons/ri'
+import { RiLoginCircleLine, RiChatPrivateLine } from 'react-icons/ri'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
@@ -43,7 +43,8 @@ function Login() {
     e.preventDefault()
 
     const userData = {
-      email,
+      // email,
+      email: 'admin@admin',
       password,
     }
 
@@ -61,6 +62,12 @@ function Login() {
           <RiLoginCircleLine /> 登入
         </h1>
         <p>login and start drawing Bings</p>
+        {/* <h1 style={{textDecoration: 'line-through'}}>
+          <RiLoginCircleLine /> 登入
+        </h1>
+        <p style={{textDecoration: 'line-through'}}>login and start drawing Bings</p>
+        <h1><RiChatPrivateLine /> private site currently</h1>
+        <p>bb 密码是四个字母吖~</p> */}
       </section>
       <section className='form'>
         <form onSubmit={onSubmit}>
