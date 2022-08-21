@@ -58,20 +58,20 @@ function Login() {
   return (
     <>
       <section className='heading'>
-        <h1>
+        {/* <h1>
           <RiLoginCircleLine /> 登入
         </h1>
-        <p>login and start drawing Bings</p>
-        {/* <h1 style={{textDecoration: 'line-through'}}>
+        <p>login and start drawing Bings</p> */}
+        <h1 style={{textDecoration: 'line-through'}}>
           <RiLoginCircleLine /> 登入
         </h1>
+        <h1><RiChatPrivateLine /> bb💕's private site currently</h1>
         <p style={{textDecoration: 'line-through'}}>login and start drawing Bings</p>
-        <h1><RiChatPrivateLine /> private site currently</h1>
-        <p>bb 密码是四个字母吖~</p> */}
+        <p>莹莹的密码是四个字母吖~</p>
       </section>
       <section className='form'>
         <form onSubmit={onSubmit}>
-          <div className='form-group'>
+          {/* <div className='form-group'>
             <input
               type='email'
               className='form-control'
@@ -81,7 +81,7 @@ function Login() {
               placeholder='Enter your email'
               onChange={onChange}
             />
-          </div>
+          </div> */}
           <div className='form-group'>
             <input
               type='password'

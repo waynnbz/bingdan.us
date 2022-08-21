@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 // import SmileHeart from '../../assets/heart-svgrepo-com.svg'
-import CouplePic from '../../assets/hot-air.png'
+import CouplePic from '../../assets/couple-mosaic.png'
 import './styles.css'
 
 function Welcome() {
@@ -9,7 +9,7 @@ function Welcome() {
   return (
     <div className='card shadow gradient'>
       <img className='welcome-icon' src={CouplePic} alt='welcome icon heart' />
-      <div className='start'>
+      <div className='start hvr-buzz-out'>
         <div className='text'>
           <h1>我们の饼单</h1>
           <p>全部一一实现阿呜呜～</p>

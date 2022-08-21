@@ -7,7 +7,7 @@ function BingFlow() {
   const [flyBings, setFlyBings] = useState([])
 
   const generateBings = () => {
-    let top = Math.floor(Math.random() * 75 + 8) + '%'
+    let top = Math.floor(Math.random() * 75 + 12) + '%'
     let dim = Math.floor(Math.random() * 80 + 25) + 'px'
     let index = Math.ceil(Math.random() * 2)
     let velocity = Math.floor(Math.random() * 50 + 10) + 's'
@@ -35,9 +35,9 @@ function BingFlow() {
   useEffect(() => {
     console.log('EFFFFFFECT')
 
-    for (let i = 0; i < 24; i++) generateBings()
+    for (let i = 0; i < 6; i++) generateBings()
 
-    setInterval(() => generateBings(), 1560)
+    setInterval(() => generateBings(), 4560)
   }, [])
 
   return (

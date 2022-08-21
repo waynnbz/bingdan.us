@@ -87,6 +87,11 @@ button::-moz-focus-inner {
 
 
 .bing-form {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+
     position: absolute;
     margin: 20px;
     left: 0px;
@@ -95,7 +100,7 @@ button::-moz-focus-inner {
     color: var(--black);
     transition: bottom .45s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     border-radius: var(--main-border-radius);
-    /* width: 100%; */
+    width: 200px;
 }
 
 .form .content {
@@ -222,9 +227,15 @@ button::-moz-focus-inner {
     to {opacity: 1}
 }
 
-@media (max-width: 390px) {
+@media (max-width: 446px) {
     .input {
-        width: 146px;
+        /* width: 146px; */
+        width: 100%;
+    }
+    .appear {
+        width: 80%;
+        bottom: 94px;
+        visibility: visible;
     }
 }
 
