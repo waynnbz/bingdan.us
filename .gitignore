@@ -2,3 +2,7 @@
 /node_modules
 /cloudy
 /frontend/node_modules
+/functions
+.firebase/
+.firebaserc
+firebase.json
