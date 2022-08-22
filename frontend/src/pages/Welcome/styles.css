@@ -117,13 +117,13 @@
   
   @keyframes hot-air {
     0% {}
-    50% {top: 30%}
+    50% {top: 25%}
     100% {}
   }
   
   @keyframes cloud {
     from {left: -100px; visibility: visible}
-    to {left: 100vw; visibility: hidden}
+    to {left: 100%; visibility: hidden}
   }
   
   @media (max-width: 480px) {

@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 // import SmileHeart from '../../assets/heart-svgrepo-com.svg'
-import CouplePic from '../../assets/heart-mosaic.png'
+import CouplePic from '../../assets/couple.png'
 import './styles.css'
 
 function Welcome() {

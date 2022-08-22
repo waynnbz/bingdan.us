@@ -7,7 +7,7 @@ function BingFlow() {
   const [flyBings, setFlyBings] = useState([])
 
   const generateBings = () => {
-    let top = Math.floor(Math.random() * 75 + 12) + '%'
+    let top = Math.floor(Math.random() * 75 + 8) + '%'
     let dim = Math.floor(Math.random() * 80 + 25) + 'px'
     let index = Math.ceil(Math.random() * 2)
     let velocity = Math.floor(Math.random() * 50 + 10) + 's'

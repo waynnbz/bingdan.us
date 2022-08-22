@@ -6,12 +6,12 @@ import BingFlow from './components/BingFlow'
 function App() {
   return (
     <>
-        <div className='container'>
-          <Header />
-          <BingFlow />
-          {/* <BingFlow /> */}
-          <Outlet />
-        </div>
+      <BingFlow />
+      <div className='container'>
+        <Header />
+        {/* <BingFlow /> */}
+        <Outlet />
+      </div>
     </>
   )
 }
