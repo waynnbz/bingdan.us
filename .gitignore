@@ -1,6 +1,6 @@
 .env
 /node_modules
-/cloudy
+/static_page
 /frontend/node_modules
 /functions
 .firebase/
